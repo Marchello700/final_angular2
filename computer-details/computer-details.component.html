@@ -8,3 +8,12 @@
 
   Computer IP address: {{computer.ipAddress}}
 </div>
+
+<hr/>
+
+<div *ngFor="let computer of computers$ | async">
+  Computer name: {{computer.name}}
+  <br/>
+
+  Computer IP address: {{computer.ipAddress}}
+</div>

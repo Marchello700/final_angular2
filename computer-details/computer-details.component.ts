@@ -17,10 +17,14 @@ export class ComputerDetailsComponent implements OnInit {
 
   computers: ComputerDetailsViewModel[];
 
+  computers$: Observable<ComputerDetailsViewModel[]>;
+
   constructor(service: DummyComputerDetailsService) {
     this._service = service;
     this.computers = [];
     this.computers = this._service.computers;
+
+    this.computers$ = this._service.getAllItems();
    }
 
   ngOnInit() {
