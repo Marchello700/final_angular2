@@ -1,23 +1,23 @@
 import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/reduce';
 
 import {IReadOnlyService} from '../ReadOnlyService';
 import {ComputerDetailsViewModel} from '../../viewModels/ComputerDetailsViewModel';
 
-export class DummyComputerDetailsService 
-    implements IReadOnlyService<ComputerDetailsViewModel> {
+export class DummyComputerDetailsService {
     
-    private _computers: ComputerDetailsViewModel[];
+    computers: ComputerDetailsViewModel[];
 
     constructor() {
-        this._computers = [];
-    }
+        let computer1 = new ComputerDetailsViewModel();
 
-    getAllItems(): Observable<ComputerDetailsViewModel[]> {
-        return Observable.from(this._computers)
-            .reduce((array: ComputerDetailsViewModel[], item: ComputerDetailsViewModel) => {
-                array.push(item);
-                return array;
-            }, []);
+        computer1.name = "dummy1";
+        computer1.ipAddress = "127.0.0.1";
+        computer1.memory = 9000;
+        computer1.user = "me";
+
+        this.computers = [computer1, computer1, computer1];
+        
     }
 }
