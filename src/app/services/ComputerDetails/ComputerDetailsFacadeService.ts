@@ -7,7 +7,7 @@ import {ComputerDetailsViewModel} from '../../viewModels/ComputerDetailsViewMode
 
 export class DummyComputerDetailsService {
     
-    computers: ComputerDetailsViewModel[];
+    private _computers: ComputerDetailsViewModel[];
 
     constructor() {
         let computer1 = new ComputerDetailsViewModel();
@@ -16,11 +16,24 @@ export class DummyComputerDetailsService {
         computer1.ipAddress = "127.0.0.1";
         computer1.memory = 9000;
         computer1.user = "me";
+        
+        let computer2 = new ComputerDetailsViewModel();
 
-        this.computers = [computer1, computer1, computer1];        
+        computer2.name = "dummy2";
+        computer2.ipAddress = "127.0.0.1";
+        computer2.memory = 9000;
+        computer2.user = "another";
+
+        this._computers = [computer1, computer2];        
     }
 
     getAllItems(): Observable<ComputerDetailsViewModel[]> {
-        return Observable.from([this.computers]);
+        return Observable.from([this._computers]);
+    }
+
+    getItemById(computerName: string): Observable<ComputerDetailsViewModel> {
+        let match = this._computers.filter(c => c.name == computerName);
+
+        return Observable.from(match);
     }
 }
