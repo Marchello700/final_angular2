@@ -5,7 +5,7 @@ import {provideForms, disableDeprecatedForms} from '@angular/forms';
 
 import {AppComponent, environment} from './app/';
 
-import {DummyComputerDetailsService} from './app/services/ComputerDetails/ComputerDetailsFacadeService';
+import {ComputerDetailsService} from './app/services/ComputerDetails/ComputerDetailsService';
 
 import {APP_ROUTER_PROVIDERS} from './app/app.routes';
 
@@ -17,7 +17,7 @@ bootstrap(AppComponent,
   [
     HTTP_PROVIDERS, 
     APP_ROUTER_PROVIDERS,
-    DummyComputerDetailsService,
+    ComputerDetailsService,
     disableDeprecatedForms(), 
     provideForms()
     ]);

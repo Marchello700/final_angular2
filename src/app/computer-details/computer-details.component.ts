@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Router, ActivatedRoute, ROUTER_DIRECTIVES} from '@angular/router';
 
-import {DummyComputerDetailsService} from '../services/ComputerDetails/ComputerDetailsFacadeService';
+import {ComputerDetailsService} from '../services/ComputerDetails/ComputerDetailsService';
 
 import {ComputerDetailsViewModel} from '../viewModels/ComputerDetailsViewModel';
+
+import {IComputerDetails} from '../dtos/ComputerDetails';
 
 @Component({
   moduleId: module.id,
@@ -14,16 +16,16 @@ import {ComputerDetailsViewModel} from '../viewModels/ComputerDetailsViewModel';
 })
 export class ComputerDetailsComponent implements OnInit {
 
-  private _service: DummyComputerDetailsService;
+  private _service: ComputerDetailsService;
 
   computerId: string;
 
-  computer: ComputerDetailsViewModel;
+  computer: IComputerDetails;
 
   private _router: Router;
   private _route: ActivatedRoute;
 
-  constructor(service: DummyComputerDetailsService, route: ActivatedRoute, router: Router) {
+  constructor(service: ComputerDetailsService, route: ActivatedRoute, router: Router) {
     this._service = service;
     this._route = route;
     this._router = router;

@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
 
-import {DummyComputerDetailsService} from '../services/ComputerDetails/ComputerDetailsFacadeService';
+import {ComputerDetailsService} from '../services/ComputerDetails/ComputerDetailsService';
 
 import {ComputerDetailsViewModel} from '../viewModels/ComputerDetailsViewModel';
+
+import {IComputerDetails} from '../dtos/ComputerDetails';
 
 @Component({
   moduleId: module.id,
@@ -14,12 +16,12 @@ import {ComputerDetailsViewModel} from '../viewModels/ComputerDetailsViewModel';
 })
 export class ComputerListComponent implements OnInit {
 
-  private _service: DummyComputerDetailsService;
+  private _service: ComputerDetailsService;
   private _router: Router;
 
-  computers$: Observable<ComputerDetailsViewModel[]>;
+  computers$: Observable<IComputerDetails[]>;
 
-  constructor(service:DummyComputerDetailsService, router: Router) {
+  constructor(service:ComputerDetailsService, router: Router) {
     this._service = service;
     this._router = router;
     this.computers$ = service.getAllItems();
