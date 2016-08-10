@@ -22,7 +22,7 @@ export class UsageDataServiceFactory
     }
         
     create(computerId: string): IReadOnlyService<IUsageData> {
-        let url: string = `api/computers/${computerId}/data`;
+        let url: string = `http://localhost:5000/api/computers/${computerId}/data/`;
 
         return new UsageDataService(this._http, url);
     }

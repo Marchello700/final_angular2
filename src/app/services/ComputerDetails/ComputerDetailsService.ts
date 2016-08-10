@@ -11,7 +11,7 @@ export class ComputerDetailsService
     extends ReadOnlyServiceBase<IComputerDetails> {
 
     constructor(http: Http) {
-        super(http, "http://localhost:5000/api/computers");
+        super(http, "http://localhost:5000/api/computers/");
         
     }
 }
