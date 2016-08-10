@@ -6,6 +6,8 @@ import {HttpServiceBase} from './HttpService';
 
 export interface IReadOnlyService<TOut> {
     getAllItems(): Observable<TOut[]>;
+    getItemById(id: string): Observable<TOut>;
+    getItemsById(ids: string[]): Observable<TOut[]>;
 }
 
 export class ReadOnlyServiceBase<TOut>
