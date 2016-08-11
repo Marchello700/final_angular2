@@ -1,0 +1,23 @@
+<div *ngIf="vmDetails">
+  <div>
+  VM Id: {{vmDetails.virtualMachineId}}
+  <br/>
+  VM host Id: {{vmDetails.hostId}}
+  <br/>
+  VM name: {{vmDetails.name}}
+  <br/>
+  VM state: {{vmDetails.state}}
+  <br/>
+  VM virtual processor count: {{vmDetails.virtualProcessorCount}}
+  <br/>
+  VM virtual memory:
+  <br/>
+  <div>
+    Virtual memory value: {{vmDetails.virtualMemory.value}}
+    <br/>
+    Virtual memory units: {{vmDetails.virtualMemory.unit}}
+    <br/>
+  </div>
+  <br/>
+  </div>
+</div>

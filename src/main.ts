@@ -6,6 +6,9 @@ import {provideForms, disableDeprecatedForms} from '@angular/forms';
 import {AppComponent, environment} from './app/';
 
 import {ComputerDetailsService} from './app/services/ComputerDetails/ComputerDetailsService';
+import {ClusterDetailsService} from './app/services/ClusterDetails/ClusterDetailsService';
+import {ClusterHostDetailsService} from './app/services/ClusterDetails/ClusterHostDetailsService';
+import {VirtualMachineDetailsService} from './app/services/ClusterDetails/VirtualMachineDetailsService';
 import {UsageDataServiceFactory} from './app/services/ComputerDetails/UsageDataServiceFactory';
 
 import {APP_ROUTER_PROVIDERS} from './app/app.routes';
@@ -19,6 +22,9 @@ bootstrap(AppComponent,
     HTTP_PROVIDERS, 
     APP_ROUTER_PROVIDERS,
     ComputerDetailsService,
+    ClusterDetailsService,
+    ClusterHostDetailsService,
+    VirtualMachineDetailsService,
     UsageDataServiceFactory,
     disableDeprecatedForms(), 
     provideForms()

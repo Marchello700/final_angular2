@@ -65,6 +65,10 @@ const barrels: string[] = [
   'app/computer-details',
   'app/computer-list',
   'app/welcome-page',
+  'app/cluster-list',
+  'app/host-list',
+  'app/virtual-machine-list',
+  'app/virtual-machine-details',
   /** @cli-barrel */
 ];
 

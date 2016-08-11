@@ -1,0 +1,38 @@
+<div *ngIf="clusterHost">
+  <div>
+  Host Id: {{clusterHost.hostId}}
+  <br/>
+  Host Cluster Id: {{clusterHost.clusterId}}
+  <br/>
+  Host name: {{clusterHost.name}}
+  <br/>
+  Host state: {{clusterHost.state}}
+  <br/>
+  Host processor count: {{clusterHost.processorCount}}
+  <br/>
+  Host physical memory:
+  <br/>
+  <div>
+    Physical memory value: {{clusterHost.physicalMemory.value}}
+    <br/>
+    Physical memory units: {{clusterHost.physicalMemory.unit}}
+    <br/>
+  </div>
+  </div>
+</div>
+<br/>
+<br/>
+<div *ngIf="vmDetails$">
+  <div *ngFor="let vm of vmDetails$ | async">
+    <div *ngIf="vm.hostId==clusterHost.hostId">
+          VM name: {{vm.name}}
+          <br/>
+          VM state: {{vm.state}}
+          <br/>
+          VM processorCount: {{vm.virtualProcessorCount}}
+          <br/>
+          <button (click)="onNavigate(vm)">VirtualMachineDetails</button>
+          <br/>
+    </div>
+    </div>
+</div>

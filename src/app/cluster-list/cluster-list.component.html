@@ -1,0 +1,14 @@
+<div *ngFor="let cluster of clusters$ | async">
+  <div>
+  Cluster Id: {{cluster.clusterId}}
+  <br/>
+  Cluster name: {{cluster.name}}
+  <br/>
+  <br/>
+  </div>
+  <div>
+    <button (click)="onNavigate(cluster)">ClusterDetails</button>
+  </div>
+<br/>
+<br/>
+</div>

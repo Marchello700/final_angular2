@@ -1,0 +1,25 @@
+<div *ngIf="cluster">
+  <div>
+  Cluster name: {{cluster.name}}
+  <br/>
+  Cluster ID: {{cluster.clusterId}}
+  <br/>
+  </div>
+</div>
+
+<br/>
+<br/>
+<div *ngIf="clusterHostDetails$">
+  <div *ngFor="let ch of clusterHostDetails$ | async">
+    <div *ngIf="ch.clusterId==cluster.clusterId">
+          Host name: {{ch.name}}
+          <br/>
+          Host state: {{ch.state}}
+          <br/>
+          Host processorCount: {{ch.processorCount}}
+          <br/>
+          <button (click)="onNavigate(ch)">HostDetails</button>
+          <br/>
+    </div>
+    </div>
+</div>

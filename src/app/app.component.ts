@@ -55,10 +55,10 @@ export class AppComponent {
   public ngOnInit(): void {
     this._views = [
       {
-        name: 'ComputerList',
-        description: 'Computer List',
+        name: 'ClusterList',
+        description: 'Cluster List',
         icon: 'group',
-        route: 'computers'
+        route: 'clusters'
       }
     ];
   }
